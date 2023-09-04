@@ -1,0 +1,17 @@
+import pandas as pd
+import os
+
+# Dosyaların bulunduğu dizini belirtin
+dosya_dizini = "C:\\Users\\humeyra.boluk\\Downloads\\seyahat"
+
+# Dosya dizinindeki tüm Excel dosyalarını bulun
+dosya_adlari = [f for f in os.listdir(dosya_dizini) if f.endswith('.xlsx')]
+
+# Tüm dosyaları bir liste içinde toplayın
+tum_dosyalar = [pd.read_excel(os.path.join(dosya_dizini, f)) for f in dosya_adlari]
+
+# Tüm dosyaları birleştirin
+birlesik_dosya = pd.concat(tum_dosyalar, ignore_index=True)
+
+# Birleşik dosyayı kaydedin
+birlesik_dosya.to_excel("birlesik_dosya.xlsx", index=False)
