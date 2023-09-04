@@ -1,6 +1,6 @@
 # merge-excel-files-w-python
 
-Elbette, işte aynı kod ve açıklamaları İngilizce olarak:
+
 
 ```python
 import pandas as pd
